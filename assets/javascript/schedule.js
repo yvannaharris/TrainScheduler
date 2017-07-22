@@ -10,3 +10,19 @@ var config = {
   firebase.initializeApp(config);
 
 var database.firebase.database();
+
+$("#submit").on("click", function(event) {
+  event.preventDefault();
+  var trainName = $("#train-name").val().trim();
+  var trainDest = $("#destination").val().trim();
+  var fristTrainTime = $("#first-train").val().trim();
+  var trainFreq = $("#frequency").val().trim();
+
+  database.ref().push({
+    traiName: trainName,
+    trainDestination: trainDest,
+    firstTrainTime: firstTrainTime,
+    trainFrequesncy: trainFreq
+  });
+
+});
